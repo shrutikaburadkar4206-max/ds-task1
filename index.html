@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+/* ----- O(1): Constant Time ----- */
+void ConstantTime(int n) {
+    cout << "O(1): " << n * 2 << endl;
+}
+
+/* ----- O(n): Linear Time ----- */
+void LinearTime(int n) {
+    cout << "O(n): ";
+    for (int i = 1; i <= n; i++) {
+        cout << i << " ";
+    }
+    cout << endl;
+}
+
+/* ----- O(n^2): Quadratic Time ----- */
+void QuadraticTime(int n) {
+    cout << "O(n^2): " << endl;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+}
+
+/* ----- O(log n): Logarithmic Time ----- */
+void LogarithmicTime(int n) {
+    cout << "O(log n): ";
+    while (n > 1) {
+        cout << n << " ";
+        n = n / 2;
+    }
+    cout << endl;
+}
+
+/* ----- Main Function ----- */
+int main() {
+    int n;
+    cout << "Enter value of n: ";
+    cin >> n;
+
+    ConstantTime(n);
+    LinearTime(n);
+    QuadraticTime(n);
+    LogarithmicTime(n);
+
+    return 0;
+}
